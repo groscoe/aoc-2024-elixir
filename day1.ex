@@ -20,6 +20,7 @@ defmodule Day1 do
       |> Enum.zip_with(fn [l, r] -> abs(l - r) end)
       # Finally, sum the differences
       |> Enum.sum()
+      |> IO.puts()
   end
 
   @spec part2() :: number
@@ -35,8 +36,8 @@ defmodule Day1 do
       )
       # Unzip the pairs of integers into a pair of sorted columns of integers
       |> unzip_and_reverse()
-      # Dumb, quadratic solution
       |> similarity_score()
+      |> IO.puts()
   end
 
   def similarity_score([left, right]) do

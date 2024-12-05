@@ -4,12 +4,14 @@ defmodule Day2 do
     File.stream!("day2-input.txt")
     |> Enum.map(&String.trim(&1) |> parse_report())
     |> Enum.count(&report_is_safe?(&1, false))
+    |> IO.puts()
   end
 
   def part2() do
     File.stream!("day2-input.txt")
     |> Enum.map(&String.trim(&1) |> parse_report())
     |> Enum.count(&report_is_safe?(&1, true))
+    |> IO.puts()
   end
 
   @spec parse_report(str_level :: String.t()) :: list
